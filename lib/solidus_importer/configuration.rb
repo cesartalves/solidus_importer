@@ -37,6 +37,8 @@ module SolidusImporter
       }
     }
 
+    preference :import_file_reader, :string, default: 'SolidusImporter::FileReader'
+
     def available_types
       solidus_importer.keys
     end

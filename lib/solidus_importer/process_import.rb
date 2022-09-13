@@ -47,12 +47,12 @@ module SolidusImporter
     private
 
     def scan
-      data = CSV.parse(
-        File.read(@import.file.path),
-        headers: true,
-        encoding: 'UTF-8',
-        header_converters: ->(h) { h.strip }
-      )
+      file = ::SolidusImporter::Config.import_file_reader.constantize.call(@import)
+
+      data = CSV.parse(file,
+                       headers: true,
+                       encoding: 'UTF-8',
+                       header_converters: ->(h) { h.strip })
       prepare_rows(data)
     end
 

@@ -16,6 +16,7 @@ require 'solidus_importer/configuration'
 require 'solidus_importer/engine'
 require 'solidus_importer/process_import'
 require 'solidus_importer/process_row'
+require 'solidus_importer/file_reader'
 
 module SolidusImporter
   class << self
